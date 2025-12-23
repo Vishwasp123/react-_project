@@ -1,7 +1,52 @@
 import { useState } from "react";
+import {login} from "../services/auth_api"
+
+import {useNavigate} from "react-router-dom"
+
+
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate(); 
+
+   //error handling show errros 
+
+    const [error, setError] = useState("")
+
+
+    //only one state for login form 
+    const[user, setUser] = useState({
+      email: "", 
+      password: ""
+    })
+
+    //login form submit 
+    const LoginForm = async(e) => {
+      e.preventDefault(); 
+
+      try{
+
+        console.log("sdfsfsdfsdf")
+        await login(user); //login api call ho rahi he 
+        navigate("/");
+      } catch(err){
+        const apiError = err.response?.data?.error;
+        console.log("LOGIN ERROR:", err.response?.data);
+        if(apiError){
+          setError(apiError)
+        }
+      }
+    }
+
+
+    //handle input chnages 
+
+    const onChange = (e) => {
+      const {name, value} = e.target 
+      setUser(prev => ({...prev, [name]: value }))
+    }
+
 
   return (
     <>
@@ -32,11 +77,11 @@ export default function Login() {
 
        {/* Overlay */}
       
-        <div className= "absolute inset-0 z-30 flex item-center justify-center  ">
+        <div className= "absolute top-0 left-0 w-full  z-30 flex  justify-center mt-15 ">
           
           {/* CARD UI HERE */}
           <div className="my-30">            
-            <div className=" bg-white shadow-2xl rounded-sm p-13  items-center"> 
+            <form onSubmit = {LoginForm} className=" bg-white shadow-2xl rounded-sm p-13  items-center"> 
 
             <h2 className="text-2xl font-semibold text-center mb-1">
              Log In to Qpay
@@ -53,6 +98,9 @@ export default function Login() {
               group-focus-within:text-xl">EMAIL ADDRESS</label>
               <input
                 type="email"
+                name="email"
+                value={user.email}
+                onChange={onChange}
                 placeholder="Email Address"
                 className="w-full  px-3 py-2 mt-1 "
               />
@@ -64,10 +112,20 @@ export default function Login() {
               group-focus-within:text-xl">PASSWORD</label>
               <input
                 type="password"
-                placeholder="********"
+                name="password"
+                value={user.password}
+                onChange={onChange}
+                placeholder="******"
                 className="w-full  px-3 py-2 mt-1 "
               />
+              {error && (
+                <p className="text-red-700 text-base mt-1 ml-2">
+                  {error}
+                </p>
+              )}
+
             </div>
+
 
             {/* Checkbox */}
             <div className="flex items-center justify-between mb-5 text-xs text-gray-600">
@@ -82,7 +140,7 @@ export default function Login() {
             </div>
 
             {/* Button */}
-            <button className="w-full bg-black text-white py-2 text-sm hover:bg-gray-900 transition hover:text-xl">
+            <button  type="submit" className="w-full bg-black text-white py-2 text-sm hover:bg-gray-900 transition hover:text-xl">
                PROCEED
             </button>
 
@@ -105,7 +163,7 @@ export default function Login() {
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/042/148/655/small/facebook-logo-facebook-social-media-icon-free-png.png" alt="" className="w-10 h-auto transition-transform duration-300 ease-in-out hover:scale-200"/>
               </div>
             </div>
-            </div> 
+            </form> 
           </div>        
         </div>  
      </div>
