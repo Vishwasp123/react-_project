@@ -26,8 +26,6 @@ export default function Login() {
       e.preventDefault(); 
 
       try{
-
-        console.log("sdfsfsdfsdf")
         await login(user); //login api call ho rahi he 
         navigate("/");
       } catch(err){
@@ -46,6 +44,9 @@ export default function Login() {
       const {name, value} = e.target 
       setUser(prev => ({...prev, [name]: value }))
     }
+
+
+    //errror handling 
 
 
   return (
