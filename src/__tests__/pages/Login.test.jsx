@@ -92,10 +92,10 @@ describe('Login Page Tests', () => {
     test("Api errors handling", async() =>{
 
         login.mockRejectedValueOnce({
-    response: {
-      data: { error: "Invalid credentials" }
-    }
-  });
+            response: {
+            data: { error: "Invalid credentials" }
+            }
+        });
 
 
         renderLogin(); 
