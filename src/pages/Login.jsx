@@ -29,7 +29,7 @@ export default function Login() {
         await login(user); //login api call ho rahi he 
         navigate("/");
       } catch(err){
-        const apiError = err.response?.data?.error;
+        const apiError =  err.response?.data?.errors;
         console.log("LOGIN ERROR:", err.response?.data);
         if(apiError){
           setError(apiError)
@@ -119,12 +119,15 @@ export default function Login() {
                 placeholder="******"
                 className="w-full  px-3 py-2 mt-1 "
               />
-              {error && (
-                <p className="text-red-700 text-base mt-1 ml-2">
-                  {error}
-                </p>
+              {error?.base && (
+                <ul className="mt-1 ml-2">
+                  {error.base.map((msg, index) => (
+                    <li key={index} className="text-red-700 text-base">
+                      {msg}
+                    </li>
+                  ))}
+                </ul>
               )}
-
             </div>
 
 

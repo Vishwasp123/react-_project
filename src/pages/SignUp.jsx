@@ -94,7 +94,7 @@ function SignUp() {
        <div className= "absolute top-0 left-0 w-full z-30 flex justify-center mt-15   ">       
           {/* CARD UI HERE */}
              
-          <form onSubmit={SingUpForm} className="bg-white shadow-2xl rounded-sm p-13 items-center"> 
+          <form onSubmit={SingUpForm}  noValidate className="bg-white shadow-2xl rounded-sm p-13 items-center"> 
 
             <h2 className="text-2xl font-semibold text-center mb-1">
               Sign up to Qpay
@@ -138,16 +138,28 @@ function SignUp() {
                 value={user.phone_number}
                 onChange={onPhoneChange}
                 enableSearch
+                countryCodeEditable={false}
+                inputProps={{
+                  name: "phone_number",
+                  "data-testid": "phone-input"
+                }}
                 containerClass="w-full"
                 inputClass="!w-full !border-0 !outline-none"
                 buttonClass="!border-0"
               />
-              {errors.phone_number && (
-                <p className="text-red-500 text-base mt-1 ml-2 ">
-                  {errors.phone_number[0]}
-                </p>
+             {errors.phone_number && (
+                <ul className="mt-1 ml-2">
+                  {errors.phone_number.map((msg, index) => (
+                    <li
+                      key={index}
+                      className="text-red-500 text-base"
+                    >
+                      {msg}
+                    </li>
+                  ))}
+                </ul>
               )}
-              
+
             </div>
             
                 
