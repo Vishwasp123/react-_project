@@ -10,43 +10,43 @@ export default function Login() {
 
   const navigate = useNavigate(); 
 
-   //error handling show errros 
+  //error handling show errros 
 
-    const [error, setError] = useState("")
+  const [error, setError] = useState("")
 
 
-    //only one state for login form 
-    const[user, setUser] = useState({
-      email: "", 
-      password: ""
-    })
+  //only one state for login form 
+  const[user, setUser] = useState({
+    email: "", 
+    password: ""
+  })
 
-    //login form submit 
-    const LoginForm = async(e) => {
-      e.preventDefault(); 
+  //login form submit 
+  const LoginForm = async(e) => {
+    e.preventDefault(); 
 
-      try{
-        await login(user); //login api call ho rahi he 
-        navigate("/");
-      } catch(err){
-        const apiError =  err.response?.data?.errors;
-        console.log("LOGIN ERROR:", err.response?.data);
-        if(apiError){
-          setError(apiError)
-        }
+    try{
+      await login(user); //login api call ho rahi he 
+      navigate("/");
+    } catch(err){
+      const apiError =  err.response?.data?.errors;
+      console.log("LOGIN ERROR:", err.response?.data);
+      if(apiError){
+        setError(apiError)
       }
     }
+  }
 
 
-    //handle input chnages 
+  //handle input chnages 
 
-    const onChange = (e) => {
-      const {name, value} = e.target 
-      setUser(prev => ({...prev, [name]: value }))
-    }
+  const onChange = (e) => {
+    const {name, value} = e.target 
+    setUser(prev => ({...prev, [name]: value }))
+  }
 
 
-    //errror handling 
+  //errror handling 
 
 
   return (
