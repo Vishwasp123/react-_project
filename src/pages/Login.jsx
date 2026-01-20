@@ -2,6 +2,7 @@ import { useState } from "react";
 import {login} from "../services/auth_api"
 
 import {useNavigate} from "react-router-dom"
+import Socialicon from "../components/Socialicon"
 
 
 
@@ -47,6 +48,13 @@ export default function Login() {
 
 
   //errror handling 
+
+
+  //onclick handling
+   const handleForgotClick = () => {
+    navigate("/forgot_password");
+  };
+
 
 
   return (
@@ -139,8 +147,7 @@ export default function Login() {
                 <u className="hover:text-lg"> Remenber me</u> 
                 </span>
               </div>
-              <span className="ml-12 hover:text-lg"><u>Forgit Password?</u></span>
-              
+              <span onClick={handleForgotClick} className="ml-12 hover:text-lg"><u>Forgit Password?</u></span>
             </div>
 
             {/* Button */}
@@ -156,17 +163,7 @@ export default function Login() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex justify-center gap-4">
-              <div className="w-9 h-9   bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://www.citypng.com/public/uploads/preview/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png" className="w-6 h-auto transition-transform duration-300 ease-in-out hover:scale-200" alt="" />
-              </div>
-              <div className="w-9 h-9 bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://www.freeiconspng.com/uploads/apple-icon-4.png" alt="" className="w-10 h-auto transition-transform duration-300 ease-in-out hover:scale-200" />
-              </div>
-              <div className="w-9 h-9  bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/042/148/655/small/facebook-logo-facebook-social-media-icon-free-png.png" alt="" className="w-10 h-auto transition-transform duration-300 ease-in-out hover:scale-200"/>
-              </div>
-            </div>
+            <Socialicon />
             </form> 
           </div>        
         </div>  

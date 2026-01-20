@@ -5,6 +5,8 @@ import { Eye, EyeOff } from "lucide-react";
 
 // import singup api form sevices/auth_api 
 
+import Socialicon from "../components/Socialicon"
+
 import {signUP} from "../services/auth_api"
 import { useNavigate, Link } from "react-router-dom";
 
@@ -66,7 +68,7 @@ function SignUp() {
     <>
      <div className="relative min-h-screen">
         {/* backgroung images */}
-        <div className="min-h-[57vh] bg-cover bg-center "
+        <div className="min-h-[35vh] sm:min-h-[45vh] md:min-h-[57vh] bg-cover bg-center"
           style={{ backgroundImage: "url('Rectangle.png')" }}>
         </div>
 
@@ -91,10 +93,16 @@ function SignUp() {
 
        {/* Overlay */}
       
-       <div className= "absolute top-0 left-0 w-full z-30 flex justify-center mt-15   ">       
+       <div className="absolute top-1/2 left-1/2 
+          -translate-x-1/2 -translate-y-1/2
+          w-full z-30 flex justify-center
+          px-3 sm:px-6 md:px-0">     
           {/* CARD UI HERE */}
              
-          <form onSubmit={SingUpForm}  noValidate className="bg-white shadow-2xl rounded-sm p-13 items-center"> 
+          <form onSubmit={SingUpForm}  noValidate className="    bg-white shadow-2xl rounded-sm
+            w-full 
+            max-w-[95%] sm:max-w-md md:max-w-lg lg:max-w-xl
+            p-4 sm:p-6 md:p-10"> 
 
             <h2 className="text-2xl font-semibold text-center mb-1">
               Sign up to Qpay
@@ -262,17 +270,8 @@ function SignUp() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex justify-center gap-4 ">
-              <div className="w-9 h-9   bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://www.citypng.com/public/uploads/preview/google-logo-icon-gsuite-hd-701751694791470gzbayltphh.png" className="w-6 h-auto transition-transform duration-300 ease-in-out hover:scale-200" alt="" />
-              </div>
-              <div className="w-9 h-9 bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://www.freeiconspng.com/uploads/apple-icon-4.png" className="w-10 h-auto transition-transform duration-300 ease-in-out hover:scale-200" alt="" />
-              </div>
-              <div className="w-9 h-9  bg-gray-100 flex items-center justify-center cursor-pointer">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/042/148/655/small/facebook-logo-facebook-social-media-icon-free-png.png" className="w-10 h-auto transition-transform duration-300 ease-in-out hover:scale-200" alt="" />
-              </div>
-            </div>
+            <Socialicon />
+
           </form>
           
         </div>  

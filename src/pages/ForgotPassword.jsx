@@ -13,7 +13,7 @@ function ForgotPassword() {
         </div> 
 
         {/* -------------- overlay------------  */}
-        <div className='absolute top-0 left-0 w-full z-30 flex justify-center mt-'>
+        <div className='absolute top-50 left w-full z-30 flex justify-center mt-'>
           <form className='bg-white shadow-2xl rounded-sm p-13 items-center'>
               
             <div>
@@ -32,14 +32,13 @@ function ForgotPassword() {
                   value = "new_password"
                   onChange = "OnChange"
                   placeholder='new_password'
-                  className='w-full px-3 py-2 mt-1'
+                  className='w-full px-3 py-2 mt-1 text-gray-400'
                 />
 
               </div>
                 
                 
               {/* -------New Password Confirmation------ */}
-
 
               <div className='mb-4 rounded-sm m-5 group focus:outline-none focus:border-black '>
                 <label className='block text-xs text-gray-800 px-2 font-normal  group-focus-within:text-black
@@ -50,10 +49,9 @@ function ForgotPassword() {
                   value = "new_password_confirmation"
                   onChange = "OnChange"
                   placeholder='new_password_confirmation'
-                  className='w-full px-3 py-2 mt-1'
+                  className='w-full px-3 py-2 mt-1 text-gray-400'
                 />
               </div>
-
 
 
               {/* submit  */}
