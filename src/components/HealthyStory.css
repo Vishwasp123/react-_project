@@ -1,0 +1,126 @@
+/* Container: Centering the whole section */
+.health-section {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Wrapper: Handles the side-by-side layout */
+.health-wrappe {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stacks vertically on mobile */
+  align-items: center;
+  gap: 30px;
+}
+
+/* Content Area */
+.health-content {
+  flex: 1;
+  width: 100%;           /* MUST be 100% so the button has room to move */
+  display: flex;         /* MUST be flex */
+  flex-direction: column; 
+  text-align: left;      /* Keeps headings and paragraphs on the left */
+}
+
+.health-content-title {
+  color: #1e73be;
+  font-size: 28px; /* Adjusted for better mobile fit */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.health-descption1 {
+  color: #7aa7d3;
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.health-description-main {
+  color: #333333;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 25px; /* Space before button */
+}
+
+/* Button: Moved to the end */
+.healthy-story-btn {
+  background-color: #1e73be;
+  color: white;
+  padding: 12px 35px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  /* This is what moves it to the right */
+  align-self: flex-end; 
+  
+  /* Matches the spacing in your image */
+  margin-top: 25px; 
+}
+
+.healthy-story-btn:hover {
+  background-color: #155a96;
+  transform: translateY(-2px);
+}
+
+/* Image Box */
+.healthy-story-image-box {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.healthy-story-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet and Desktop View (768px and up) */
+@media (min-width: 768px) {
+  .health-wrappe {
+    flex-direction: row; /* Side-by-side layout */
+    align-items: center; /* Center image and text vertically */
+    gap: 50px;
+  }
+
+  .health-content-title {
+    font-size: 2.5rem;
+  }
+
+  .health-section {
+    padding: 80px 40px;
+  }
+
+  /* Keeps button at the end on larger screens too */
+  .healthy-story-btn {
+    align-self: flex-end; 
+  }
+}
+
+/* Desktop View (1024px and up) */
+@media (min-width: 1024px) {
+  .health-content-title {
+    font-size: 3rem;
+  }
+  
+  .health-wrappe {
+    gap: 80px;
+  }
+}

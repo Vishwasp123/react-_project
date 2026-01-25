@@ -1,0 +1,102 @@
+/* ==============================
+   CALENDAR SECTION – RESPONSIVE
+============================== */
+
+.calendar-section {
+  width: 100%;
+}
+
+/* Heading */
+.calendar-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.timezone-text{
+    color: black !important;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .calendar-heading {
+    font-size: 22px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .calendar-heading {
+    font-size: 25px;
+  }
+}
+
+/* Timezone block */
+.timezone-wrapper {
+  margin-top: 16px;
+}
+
+/* Timezone heading */
+.timezone-heading {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+
+/* ==============================
+   MOBILE CALENDAR HARD FIX
+============================== */
+
+.calendar-wrapper {
+  width: 100%;
+  overflow: hidden; /* 🔒 stop right overflow */
+}
+
+/* Force calendar to fit card */
+.calendar-wrapper .react-calendar {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Make inner elements respect width */
+.calendar-wrapper .react-calendar * {
+  box-sizing: border-box;
+}
+
+/* 🔥 MOBILE ONLY: shift calendar LEFT */
+@media (max-width: 640px) {
+  .calendar-wrapper .react-calendar { /* LEFT side increase */
+    margin-right: 0;      /* RIGHT locked */
+  }
+}
+  /* React calendar base */
+.calendar-wrapper .react-calendar {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .timezone-select {
+    font-size: 14px;
+  }
+}
+
+
+/* ==============================
+   FIX CALENDAR COLUMN ON MOBILE
+============================== */
+
+.calendar-column {
+  width: 360px; /* desktop default */
+}
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 640px) {
+  .calendar-column {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}

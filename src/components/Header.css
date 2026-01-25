@@ -1,0 +1,228 @@
+/* --- Global Resets --- */
+.header-root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-section {
+  background-color: #1470AF;
+  color: aliceblue;
+  width: 100%;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: relative;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-top, .logo-bottom {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  color: white;
+}
+
+/* --- Navigation (Desktop) --- */
+.header-nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-nav li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.login-button {
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* --- Toggle Button --- */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1100;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 24px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  font-size: clamp(18px, 3vw, 24px);
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* --- Book Cards --- */
+.book-card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.book-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.book-consulation1 {
+  width: 100%;
+  max-width: 346px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.fream {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Media Queries --- */
+
+@media (max-width: 992px) {
+  .header {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-bottom: 2px;
+  }
+
+  .header-nav {
+    position: fixed;
+    right: -100%; 
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: #1470AF;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding-top: 100px; 
+    padding-left: 25px; 
+    transition: 0.4s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .header-nav.active {
+    right: 0; /* Changed from -130px to 0 so it actually shows up */
+  }
+
+  .header-nav li {
+    display: flex;           /* Added to support centering logic */
+    align-items: center;
+    justify-content: center; /* Fixed: Added missing semicolon */
+    width: 100%;
+    list-style: none;
+    margin-bottom: 25px;
+  }
+
+  .header-nav li a {
+    font-size: 18px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;      /* Ensures text is centered inside the link */
+  }
+
+  .login-item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-section {
+    padding: 11px 20px;
+  }
+  .logo-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .logo-top, .logo-bottom {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav {
+    width: 50%;
+  }
+}

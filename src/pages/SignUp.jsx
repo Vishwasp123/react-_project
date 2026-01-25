@@ -93,16 +93,33 @@ function SignUp() {
 
        {/* Overlay */}
       
-       <div className="absolute top-1/2 left-1/2 
-          -translate-x-1/2 -translate-y-1/2
-          w-full z-30 flex justify-center
-          px-3 sm:px-6 md:px-0">     
+       <div
+          className="absolute top-[45px] md:top-[50px] left-1/2 -translate-x-1/2 w-full z-30 flex justify-center
+              px-4 sm:px-0"             
+           >
+     
           {/* CARD UI HERE */}
              
-          <form onSubmit={SingUpForm}  noValidate className="    bg-white shadow-2xl rounded-sm
-            w-full 
-            max-w-[95%] sm:max-w-md md:max-w-lg lg:max-w-xl
-            p-4 sm:p-6 md:p-10"> 
+         <form
+            onSubmit={SingUpForm}
+            noValidate
+            className="
+              bg-white shadow-2xl rounded-sm
+              mx-auto
+
+              mt-[45px] sm:mt-6
+              mb-4 sm:mb-6
+
+              w-full
+              sm:max-w-sm
+              md:max-w-md
+              lg:max-w-lg
+
+              p-3 sm:p-4 md:p-5
+            "
+          >
+
+
 
             <h2 className="text-2xl font-semibold text-center mb-1">
               Sign up to Qpay

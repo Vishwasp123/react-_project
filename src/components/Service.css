@@ -1,0 +1,103 @@
+.services-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #2D2D2D;
+  margin-bottom: 40px;
+  text-align: left; /* Aligned left as per image */
+}
+
+/* Grid setup for 4 columns */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: #F1F4F9; /* Light grey background from image */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+
+.service-img-wrapper {
+  padding: 15px; /* Creates the border effect around image */
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-info {
+  padding: 0 20px 25px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 10px 0;
+}
+
+.service-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+/* Learning More Button Style */
+.learn-more-btn {
+  background-color: #1470AF;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-end; /* Aligns button to right as per image */
+  box-shadow: 0 4px 6px rgba(20, 112, 175, 0.2);
+  transition: background 0.2s;
+}
+
+.learn-more-btn:hover {
+  background-color: #0d5a8f;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-title {
+    font-size: 28px;
+  }
+}

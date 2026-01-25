@@ -1,0 +1,198 @@
+/* Reset and Container */
+.checklist-container {
+ 
+  background-color: #f8fbff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers everything horizontally */
+}
+
+/* 1. Header */
+.zigzag-header {
+  background-color: #1470AF;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  /* Ensures the header stays above the content */
+  z-index: 10; 
+}
+
+.zigzag-header::after {
+  content: '';
+  position: absolute;
+  /* This moves the zigzag pattern exactly to the bottom of the 40px bar */
+  bottom: -20px; 
+  left: 0;
+  right: 0;
+  height: 20px;
+  /* The 4-layer gradient creates the triangular 'teeth' effect */
+  background: 
+    linear-gradient(135deg, #1470AF 25%, transparent 25%) -20px 0,
+    linear-gradient(225deg, #1470AF 25%, transparent 25%) -20px 0,
+    linear-gradient(315deg, #1470AF 25%, transparent 25%),
+    linear-gradient(45deg, #1470AF 25%, transparent 25%);
+  background-size: 40px 40px;
+  background-color: transparent;
+}
+
+/* 2. Main Layout Flow */
+.checklist-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures Heading, Card, and Answer Card are centered */
+  padding: 40px 20px;
+  margin-top: 70px;
+}
+
+/* 3. Heading and Sparkle */
+.checklist-heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.heading-decorator {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle-icon {
+  position: absolute;
+    top: -46px;
+    left: -65px;
+}
+
+.heading-decorator h1 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.highlight {
+  color: #1470AF;
+  font-weight: 700;
+}
+
+/* 4. Statement Card (Blue Pill) */
+.statement-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px; /* Space for the bottom floating buttons */
+}
+
+.statement-card {
+  position: relative;
+  width: 100%;
+  max-width: 766px; /* Your Figma Width */
+  height: 132px;      /* Your Figma Height */
+  background-color: #1470AF;
+  border-radius: 93.5px; /* Perfect Pill Shape (Height / 2) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.statement-text {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 70px; /* Space so text doesn't hit side arrows */
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.left-arrow { left: -15px; }
+.right-arrow { right: -15px; }
+
+/* Floating Action Buttons */
+.action-buttons-overlay {
+  position: absolute;
+  bottom: -35px; /* Sits on the bottom edge */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.circle-btn {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* 5. Answer Card (Grey) */
+.answer-card {
+  width: 100%;
+  max-width: 766px;
+  height: 220px;
+  background-color: #e8eef3;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #666;
+  font-style: italic;
+}
+
+.mini-check {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 6. Responsive Fixes */
+@media (max-width: 768px) {
+  .statement-card {
+    height: auto;
+    min-height: 150px;
+    border-radius: 40px; /* Less rounded for better text space on mobile */
+    padding: 40px 10px;
+  }
+ 
+  .sparkle-icon {
+    width: 50px;      /* chhota kar do */
+    top: -45px;
+    left: -20px;
+    display: block;  
+  } /* force show */
+
+  .answer-text{
+    margin-left: 30px
+  }
+
+  .answer-card{
+
+    margin-right: 0px;
+  }
+
+  
+}

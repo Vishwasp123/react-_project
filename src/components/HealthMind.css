@@ -1,0 +1,64 @@
+.healthy-mind-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.healthy-mind-title{
+    color: #1e73be;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.healthy-mind-description{
+    color: #555555;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.healthy-mind-btn{
+    background-color: #1e73be;
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(30, 115, 190, 0.2);
+    transition: all 0.3s ease;
+}
+
+.healthy-mind-btn:hover{
+    background-color: #155a96;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 115, 190, 0.3);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .healthy-mind-title {
+    font-size: 1.8rem;
+  }
+  .healthy-mind-section {
+    padding: 70px 40px;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .healthy-mind-title {
+    font-size: 2.2rem;
+  }
+  .healthy-mind-section {
+    padding: 100px 0;
+  }
+}
+
